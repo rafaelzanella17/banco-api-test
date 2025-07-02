@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import 'dotenv/config'
 
 
+
 describe('Login', () => {
   describe('POST /login', () => {
     it('Deve retornar 200 com token em string quando usar credenciais válidas', async () => {
@@ -14,11 +15,6 @@ describe('Login', () => {
           'username': 'julio.lima',
           'senha': '123456'
         })
-
-      console.log('Status: ' + resposta.status)
-      console.log('Body: ' + resposta.body.token)
-      // console.log(process.env)  
-      console.log(process.env.BASE_URL)
 
       expect(resposta.body.token).to.be.a('string')
       expect(resposta.status).to.equal(200)
